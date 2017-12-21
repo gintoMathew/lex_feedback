@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>FeedbackButtonEvent</members>
+        <members>FeedbackComponent</members>
+        <members>FeedbackQnA</members>
+        <members>FeedbackQnADisplay</members>
+        <members>FeedbackQuesEvent</members>
+        <members>FeedbackSplash</members>
+        <members>FeedbackSplashEvent</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Feedback_Response__c</members>
+        <members>Feedback__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>feedback_begin</members>
+        <members>feedback_end</members>
+        <name>StaticResource</name>
+    </types>
+    <version>41.0</version>
+</Package>
