@@ -1,0 +1,41 @@
+<aura:component controller="FeedbackDataFetcher" implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="simpleRecord" type="Object" />
+    <aura:attribute name="feedbackGiven" type="Boolean" />
+    <aura:attribute name="showSplash" type="Boolean" />
+    
+    <aura:handler name="init" action="{!c.initFeedback}" value="{!this}" />
+    <aura:handler name="splashEvent" event="c:FeedbackSplashEvent" action="{!c.beginFeedback}"/>
+    <aura:handler name="showThanks" event="c:FeedbackSplashEvent" action="{!c.showThanksSplash}" />
+    
+    <force:recordData aura:id="oppRecData"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      fields="Feedback_Submitted__c"
+                      targetFields="{!v.simpleRecord}"
+                      targetRecord="{!v.record}" />
+
+    <!-- PAGE HEADER -->
+     <lightning:layout class="slds-page-header slds-page-header--object-home">
+        <lightning:layoutItem >
+            <lightning:icon iconName="standard:scan_card" alternativeText="Feedback"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="horizontal-small">
+            <div class="page-section page-header">
+                <h1 class="slds-text-heading--label">Feedback</h1>
+                <h2 class="slds-text-heading--medium">Provide a quick feedback</h2>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <!-- / PAGE HEADER -->
+    
+    <aura:if isTrue="{!v.showSplash}">
+        <!-- show splash screen -->
+    	<c:FeedbackSplash feedbackComplete="{!v.feedbackGiven}" /> 
+        <aura:set attribute="else" >
+            <c:FeedbackQnA recId="{!v.recordId}"/>
+        </aura:set>
+    </aura:if>
+    	
+</aura:component>

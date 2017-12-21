@@ -1,0 +1,27 @@
+<aura:component controller="FeedbackDataFetcher" implements="force:hasRecordId" >
+    
+    <aura:attribute name="feedQuesMap" type="Map" />
+    <aura:attribute name="feedQuesAnsMap" type="Map" />
+    <aura:attribute name="fQMap" type="Map" />
+    <aura:attribute name="feedQuesList" type="String[]" />
+    <aura:attribute name="feedbackId" type="String" />
+    <aura:attribute name="recId" type="String" />
+    
+    <aura:attribute name="quesToDisplay" type="String" />
+    <aura:attribute name="theIndex" type="Integer" />
+    <aura:attribute name="hasNext" type="Boolean" />
+    <aura:attribute name="hasPrev" type="Boolean" />
+    <aura:attribute name="hasSubmit" type="Boolean" />
+    
+    <aura:handler name="init" action="{!c.loadQuestions}" value="{!this}" />
+    
+    <aura:handler name="sendClick" event="c:FeedbackButtonEvent" action="{!c.handleClick}" />
+    
+    <aura:registerEvent name="sendQuestion" type="c:FeedbackQuesEvent" />
+    <aura:registerEvent name="showThanks" type="c:FeedbackSplashEvent" />
+
+    <div class="cstmbkg">
+    <c:FeedbackQnADisplay question="{!v.quesToDisplay}" hasNext="{!v.hasNext}" hasPrev="{!v.hasPrev}" hasSubmit="{!v.hasSubmit}" theIndex="{!v.theIndex}"/>
+    </div>
+    
+</aura:component>

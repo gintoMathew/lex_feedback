@@ -1,0 +1,8 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="theQuestion" type="String" />
+    <aura:attribute name="nextIndex" type="Integer" />
+    <aura:attribute name="hasNext" type="Boolean" />
+    <aura:attribute name="hasPrev" type="Boolean" />
+    <aura:attribute name="hasSubmit" type="Boolean" />
+    <aura:attribute name="theAns" type="String" />
+</aura:event>

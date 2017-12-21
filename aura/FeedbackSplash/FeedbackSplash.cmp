@@ -1,0 +1,13 @@
+<aura:component >
+    <aura:attribute name="feedbackComplete" type="Boolean" />
+    <aura:registerEvent name="splashEvent" type="c:FeedbackSplashEvent" />
+    
+    <aura:if isTrue="{!v.feedbackComplete}" >
+        <img src="/resource/feedback_end" />
+        <aura:set attribute="else" >
+            <img src="/resource/feedback_begin" />
+            <lightning:button label="Start" title="Start" onclick="{!c.startFeedback}" />
+        </aura:set>
+    </aura:if>
+    
+</aura:component>

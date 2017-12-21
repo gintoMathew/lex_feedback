@@ -1,0 +1,34 @@
+<aura:component >
+    <aura:attribute name="question" type="String" />
+    <aura:attribute name="answer" type="String" />
+    <aura:attribute name="theIndex" type="Integer" />
+    <aura:attribute name="answerMap" type="Map" />
+    <aura:attribute name="hasNext" type="Boolean" />
+    <aura:attribute name="hasPrev" type="Boolean" />
+    <aura:attribute name="hasSubmit" type="Boolean" />
+    <aura:attribute name="validAns" type="Boolean" />
+
+    <aura:registerEvent name="sendClick" type="c:FeedbackButtonEvent" />
+    
+    <aura:handler event="c:FeedbackQuesEvent" action="{!c.handleButtons}" />
+    
+    <br/>
+    <div class="bold">
+        <ui:outputText value="{!'Q. ' + v.theIndex}" />&nbsp;&nbsp;
+        <ui:outputText value="{!v.question}" />
+    </div>
+    <br/><br/>
+    <ui:inputTextArea aura:id="ansId" label="Enter feedback " value="{!v.answer}" rows="3" />
+    <br/>    
+    <aura:renderIf isTrue="{!v.hasPrev}">
+        <lightning:button label="Previous Question" title="Previous Question" onclick="{!c.showPrev}" />
+    </aura:renderIf>
+    <aura:renderIf isTrue="{!v.hasNext}">
+        <lightning:button variant="brand" label="Next Question" title="Next Question" onclick="{!c.showNext}" />
+    </aura:renderIf>
+    <aura:renderIf isTrue="{!v.hasSubmit}">
+    	<lightning:button variant="success" label="Submit!" title="Submit!" onclick="{!c.saveAnswer}" />
+    </aura:renderIf>
+    
+    
+</aura:component>

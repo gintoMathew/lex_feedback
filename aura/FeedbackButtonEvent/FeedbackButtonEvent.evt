@@ -1,0 +1,5 @@
+<aura:event type="COMPONENT">
+    <aura:attribute name="buttonClicked" type="String" />
+    <aura:attribute name="indexOf" type="Integer" />
+    <aura:attribute name="theAnswer" type="String" />
+</aura:event>
