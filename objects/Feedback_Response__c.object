@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object will hold the responses that for the feedback that will be filled in by the user</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Answer_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Answer 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Answer_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Answer 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Answer_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Answer 3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Answer_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Answer 4</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Answer_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Answer 5</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Feedback__c</fullName>
+        <description>Related to the Feedback back</description>
+        <externalId>false</externalId>
+        <label>Feedback</label>
+        <referenceTo>Feedback__c</referenceTo>
+        <relationshipLabel>Feedback Responses</relationshipLabel>
+        <relationshipName>Feedback_Responses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Feedback Responses</relationshipLabel>
+        <relationshipName>Feedback_Responses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Submitted_by__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The user who has submitted the feedback</description>
+        <externalId>false</externalId>
+        <label>Submitted by</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Feedback_Responses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Feedback Response</label>
+    <nameField>
+        <displayFormat>FEEDRESP-{00000}</displayFormat>
+        <label>Feedback Response Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Feedback Responses</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
